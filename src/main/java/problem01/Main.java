@@ -22,7 +22,6 @@ public class Main {
 	
 			System.out.print( "[" + min + "-" + max + "] 사이의 값 입력:" );
 			int answer = scanner.nextInt();
-			
 			boolean result = checkAnswer( answer );
 			if ( result ) {
 				break;
@@ -39,6 +38,18 @@ public class Main {
 	}
 	
 	public static boolean checkAnswer(int answer) {
-		return true;
+		if(answer == randomNumber) {
+			count++;
+			return true;
+		}
+		else {
+			if(answer < randomNumber)
+				min = answer;
+			else if(answer > randomNumber && answer < max){
+				max = answer;
+			}
+			count++;
+			return false;
+		}
 	}
 }
